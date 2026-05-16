@@ -364,6 +364,50 @@ footer{
     font-size:38px;
   }
 
+  /* =========================
+     CALENDAR MOBILE
+  ========================= */
+
+  .calendar-section{
+    padding:70px 12px;
+  }
+
+  .calendar-box{
+    width:100%;
+    padding:28px 18px;
+  }
+
+  .calendar-box h2{
+    font-size:34px;
+    margin-bottom:28px;
+  }
+
+  .calendar-header{
+    gap:4px;
+    margin-bottom:18px;
+  }
+
+  .calendar-header span{
+    font-size:15px;
+    letter-spacing:0;
+  }
+
+  .calendar-grid{
+    gap:18px 8px;
+  }
+
+  .calendar-grid span{
+    font-size:20px;
+  }
+
+  .heart-day::before{
+    font-size:34px;
+  }
+
+  /* =========================
+     GALLERY MOBILE
+  ========================= */
+
   .gallery-grid{
     grid-template-columns:1fr 1fr;
     gap:8px;
@@ -371,10 +415,6 @@ footer{
 
   .gallery-item{
     height:240px !important;
-  }
-
-  .calendar-grid span{
-    font-size:18px;
   }
 
 }
