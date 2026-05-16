@@ -1,18 +1,19 @@
 const loader = document.querySelector(".loader");
+
 const openInvite = document.getElementById("openInvite");
 
 const music = document.getElementById("music");
+
 const musicBtn = document.getElementById("musicBtn");
 
 let playing = false;
 
-/* =========================
-   OPEN INVITATION
-========================= */
+/* OPEN INVITATION */
 
-openInvite.addEventListener("click", () => {
+openInvite.addEventListener("click",()=>{
 
   music.play();
+
   playing = true;
 
   gsap.to(loader,{
@@ -21,7 +22,7 @@ openInvite.addEventListener("click", () => {
   });
 
   setTimeout(()=>{
-    loader.style.display = "none";
+    loader.style.display="none";
   },1500);
 
   gsap.from(".hero-content .sub",{
@@ -44,24 +45,7 @@ openInvite.addEventListener("click", () => {
 
 });
 
-/* =========================
-   SWIPER
-========================= */
-
-const swiper = new Swiper(".mySwiper",{
-  loop:true,
-  speed:1500,
-
-  autoplay:{
-    delay:3000,
-    disableOnInteraction:false
-  }
-
-});
-
-/* =========================
-   SCROLL REVEAL
-========================= */
+/* SCROLL REVEAL */
 
 const reveals = document.querySelectorAll(".reveal");
 
@@ -82,11 +66,11 @@ reveals.forEach((el)=>{
 
 });
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* COUNTDOWN */
 
-const targetDate = new Date("December 20, 2026 18:00:00").getTime();
+const targetDate = new Date(
+  "December 06, 2026 18:00:00"
+).getTime();
 
 setInterval(()=>{
 
@@ -113,23 +97,22 @@ setInterval(()=>{
   );
 
   document.getElementById("days").innerHTML = days;
+
   document.getElementById("hours").innerHTML = hours;
+
   document.getElementById("minutes").innerHTML = minutes;
+
   document.getElementById("seconds").innerHTML = seconds;
 
 },1000);
 
-/* =========================
-   MUSIC BUTTON
-========================= */
+/* MUSIC BUTTON */
 
 musicBtn.addEventListener("click",()=>{
 
   if(!playing){
 
     music.play();
-
-    musicBtn.style.transform = "rotate(360deg)";
 
     playing = true;
 
@@ -140,5 +123,31 @@ musicBtn.addEventListener("click",()=>{
     playing = false;
 
   }
+
+});
+
+/* GALLERY REVEAL */
+
+const galleryItems = document.querySelectorAll(".gallery-item");
+
+const galleryObserver = new IntersectionObserver((entries)=>{
+
+  entries.forEach((entry)=>{
+
+    if(entry.isIntersecting){
+
+      entry.target.classList.add("show");
+
+    }
+
+  });
+
+},{
+  threshold:0.2
+});
+
+galleryItems.forEach((item)=>{
+
+  galleryObserver.observe(item);
 
 });
