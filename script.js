@@ -128,7 +128,9 @@ musicBtn.addEventListener("click",()=>{
 
 /* GALLERY REVEAL */
 
-const galleryItems = document.querySelectorAll(".gallery-item");
+const galleryItems = document.querySelectorAll(
+  ".gallery-item, .gallery-quote"
+);
 
 const galleryObserver = new IntersectionObserver((entries)=>{
 
