@@ -263,11 +263,17 @@ function initMapPopup() {
 
     const overlay = document.getElementById("close-map");
 
-    openBtn.addEventListener("click", () => {
+    openBtn.addEventListener("click", (e) => {
+
+    e.preventDefault();
+
+    requestAnimationFrame(() => {
 
         popup.classList.add("show");
 
     });
+
+});
 
     function closePopup() {
 
