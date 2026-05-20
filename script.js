@@ -263,17 +263,13 @@ function initMapPopup() {
 
     const overlay = document.getElementById("close-map");
 
-    openBtn.addEventListener("click", (e) => {
+    function openPopup(e) {
 
-    e.preventDefault();
-
-    requestAnimationFrame(() => {
+        e.preventDefault();
 
         popup.classList.add("show");
 
-    });
-
-});
+    }
 
     function closePopup() {
 
@@ -281,9 +277,11 @@ function initMapPopup() {
 
     }
 
-    closeBtn.addEventListener("click", closePopup);
+    openBtn.addEventListener("pointerup", openPopup);
 
-    overlay.addEventListener("click", closePopup);
+    closeBtn.addEventListener("pointerup", closePopup);
+
+    overlay.addEventListener("pointerup", closePopup);
 
 }
 
