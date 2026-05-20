@@ -1642,12 +1642,18 @@ backdrop-filter: blur(2px);
 }
 
 /* ===== MAP BUTTON ===== */
+.fade-up-scroll {
+    pointer-events: none;
+}
 
+.fade-up-scroll.show {
+    pointer-events: auto;
+}
 .map-btn {
 
     margin-top: 20px;
     position: relative;
-    z-index: 90;
+    z-index: 999;
     padding: 14px 28px;
 
     border: none;
