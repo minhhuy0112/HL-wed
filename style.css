@@ -1646,7 +1646,8 @@ backdrop-filter: blur(2px);
 .map-btn {
 
     margin-top: 20px;
-
+    position: relative;
+    z-index: 20;
     padding: 14px 28px;
 
     border: none;
