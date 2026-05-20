@@ -1681,7 +1681,7 @@ backdrop-filter: blur(2px);
     position: fixed;
 
     inset: 0;
-
+    visibility: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1699,7 +1699,7 @@ backdrop-filter: blur(2px);
 .map-popup.show {
 
     opacity: 1;
-
+    visibility: visible;
     pointer-events: auto;
 }
 
