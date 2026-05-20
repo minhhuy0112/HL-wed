@@ -216,7 +216,7 @@ overflow: hidden;
 }
 
 .couple-title-script {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'MyWeddingFont', cursive;
     font-size: 3.5rem;
     color: var(--gold);
     margin-bottom: 3.5rem;
@@ -225,7 +225,7 @@ overflow: hidden;
 
 .ampersand {
     font-size: 2.25rem;
-    font-family: initial;
+    font-family: 'Dancing Script', cursive;
     display: block;
     margin: 0.5rem 0;
     color: var(--gold-light);
