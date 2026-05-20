@@ -1655,7 +1655,7 @@ backdrop-filter: blur(2px);
     position: relative;
     z-index: 999;
     padding: 14px 28px;
-
+    touch-action: manipulation;
     border: none;
 
     border-radius: 999px;
