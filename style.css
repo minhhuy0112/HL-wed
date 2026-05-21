@@ -1194,20 +1194,29 @@ text-align: center;
 
 .heart-day {
     position: relative;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+
+    width: 62px;
+    height: 62px;
+
+    margin: auto;
+
+    color: white;
+    font-weight: 600;
+    font-size: 1.6rem;
 }
 
 .heart-outline {
     position: absolute;
+
     width: 62px;
     height: 62px;
 
+    fill: #b3001b;
     stroke: #8b0000;
     stroke-width: 3;
-
-    fill: #b3001b; /* ruby red */
 
     animation: heartbeat 1.2s infinite ease-in-out;
     transform-origin: center;
@@ -1215,19 +1224,13 @@ text-align: center;
     filter:
         drop-shadow(0 0 6px rgba(179,0,27,0.35));
 }
-.heart-day {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    font-weight: 600;
-    z-index: 2;
-}
 
 .heart-day svg {
-    z-index: -1;
+    z-index: 0;
+}
+
+.heart-day {
+    z-index: 2;
 }
 
 @keyframes heartbeat {
