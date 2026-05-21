@@ -124,6 +124,19 @@ function createHeart(container, svgMarkup) {
     container.appendChild(heart);
 }
 
+/* ===== HERO PARALLAX ===== */
+
+const heroBg = document.querySelector('.hero-bg');
+
+window.addEventListener('scroll', () => {
+
+    const scrollY = window.scrollY;
+
+    heroBg.style.transform =
+        `scale(1.15) translateY(${scrollY * 0.18}px)`;
+
+});
+
 // 4. Music Playback Controller Toggle
 function initMusicController() {
     const btnMusic = document.getElementById("music-toggle");
