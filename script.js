@@ -144,37 +144,7 @@ function initMusicController() {
     });
 }
 
-// 5. RSVP Submission Handling
-function handleRSVPSubmit(event) {
-    event.preventDefault();
 
-    const name = document.getElementById("rsvp-name").value;
-    const attending = document.querySelector('input[name="attending"]:checked').value;
-    const guests = document.getElementById("rsvp-guests").value;
-    const message = document.getElementById("rsvp-message").value;
-
-    const payload = {
-        name: name,
-        attending: attending,
-        guests: guests,
-        message: message,
-        submittedAt: new Date().toISOString()
-    };
-
-    console.log("Saving RSVP Payload to database:", payload);
-
-    // Save locally or mock sending to Google Sheets / Firebase
-    localStorage.setItem("rsvp_response", JSON.stringify(payload));
-
-    // Show Success State visual transitions
-    const formWrapper = document.getElementById("rsvp-form-wrapper");
-    const successCard = document.getElementById("rsvp-success");
-
-    if (formWrapper && successCard) {
-        formWrapper.classList.add("hidden");
-        successCard.classList.remove("hidden");
-    }
-}
 
 // 6. Reset Form Visual states
 function resetRSVPForm() {
