@@ -2009,3 +2009,178 @@ backdrop-filter: blur(2px);
 
     color: #111;
 }
+/* ===== PREMIUM WEDDING GIFT CARD ===== */
+
+.wedding-gift-card{
+
+    max-width: 520px;
+
+    margin: auto;
+
+    padding: 55px 38px;
+
+    border-radius: 42px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            #ffffff,
+            #fcfbf8
+        );
+
+    border: 2px solid rgba(197,160,89,.75);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.06);
+
+    position: relative;
+}
+
+.gift-top-decor,
+.gift-divider{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+
+    color: #d4a64f;
+}
+
+.gift-top-decor{
+    margin-bottom: 30px;
+}
+
+.gift-divider{
+    margin-bottom: 30px;
+}
+
+.gift-divider.small{
+    margin: 24px 0;
+}
+
+.gift-top-decor span,
+.gift-divider span{
+
+    width: 140px;
+    height: 1px;
+
+    background:
+        rgba(212,166,79,.65);
+}
+
+.wedding-gift-card .gift-role{
+
+    font-size: 3.2rem;
+
+    line-height: 1.2;
+
+    margin-bottom: 30px;
+
+    color: #c89b46;
+
+    text-align: center;
+}
+
+.wedding-gift-card .qr-wrapper{
+
+    background: #fff;
+
+    border-radius: 36px;
+
+    padding: 22px;
+
+    margin-bottom: 35px;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.05);
+}
+
+.wedding-gift-card .qr-img{
+
+    width: 100%;
+    max-width: 320px;
+
+    display: block;
+
+    margin: auto;
+}
+
+.wedding-gift-card .bank-details{
+
+    text-align: center;
+}
+
+.gift-info-block{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.wedding-gift-card .bank-label{
+
+    font-size: .9rem;
+
+    letter-spacing: .28em;
+
+    color: #999;
+}
+
+.wedding-gift-card .bank-value{
+
+    font-size: 2rem;
+
+    font-weight: 700;
+
+    color: #111;
+}
+
+.wedding-gift-card .bank-valueHighlight{
+
+    font-size: 2.2rem;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    color: #111;
+}
+
+.owner-name{
+    font-size: 1.8rem !important;
+}
+
+@media(max-width:768px){
+
+    .wedding-gift-card{
+
+        padding: 40px 24px;
+
+        border-radius: 32px;
+    }
+
+    .wedding-gift-card .gift-role{
+
+        font-size: 2.4rem;
+    }
+
+    .wedding-gift-card .bank-value{
+
+        font-size: 1.5rem;
+    }
+
+    .wedding-gift-card .bank-valueHighlight{
+
+        font-size: 1.8rem;
+    }
+
+    .owner-name{
+        font-size: 1.4rem !important;
+    }
+
+    .gift-top-decor span,
+    .gift-divider span{
+
+        width: 80px;
+    }
+}
