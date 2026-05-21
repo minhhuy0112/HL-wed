@@ -1211,8 +1211,10 @@ text-align: center;
 
     color: white;
 
-    font-size: 1rem;
+    font-size: inherit;
     font-weight: 600;
+
+    line-height: 1;
 }
 
 @keyframes heartbeat {
