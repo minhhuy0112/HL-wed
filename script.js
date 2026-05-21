@@ -314,70 +314,131 @@ function initRSVPForm() {
 
     const form = document.getElementById("rsvp-form");
 
-    form.addEventListener("submit", async (e) => {
+    const successBox =
+        document.getElementById("rsvp-success");
 
-        e.preventDefault();
+    const formWrapper =
+        document.getElementById("rsvp-form-wrapper");
 
-        const submitBtn = form.querySelector("button");
+    if (!form) return;
 
-        submitBtn.disabled = true;
+    form.addEventListener(
+        "submit",
+        async function (e) {
 
-        submitBtn.innerText = "Đang gửi...";
+            e.preventDefault();
 
-        const data = {
+            const submitBtn =
+                form.querySelector(
+                    ".btn-submit"
+                );
 
-            name: document
-                .getElementById("guest-name")
-                .value,
-
-            phone: document
-                .getElementById("guest-phone")
-                .value,
-
-            guests: document
-                .getElementById("guest-count")
-                .value,
-
-            message: document
-                .getElementById("guest-message")
-                .value
-        };
-
-        try {
-
-            await fetch(
-                "https://script.google.com/macros/s/AKfycbwYpVw7z52DI_tPLwRvzzzBDBdgXebClSo3RXHpftazGUYOBwL6jOP4NiBVUkMli6-u/exec",
-                {
-
-                    method: "POST",
-                    mode: "cors",
-                    headers: {
-                        "Content-Type":
-                        "application/json"
-                    },
-
-                    body: JSON.stringify(data)
-
-                }
-            );
+            submitBtn.disabled = true;
 
             submitBtn.innerText =
-                "Đã xác nhận ✓";
+                "ĐANG GỬI...";
 
-            form.reset();
+            const data = {
 
-        } catch (error) {
+                name: document
+                    .getElementById(
+                        "guest-name"
+                    )
+                    .value,
 
-            submitBtn.disabled = false;
+                attending: document
+                    .querySelector(
+                        'input[name="attending"]:checked'
+                    )
+                    .value,
 
-            submitBtn.innerText =
-                "Gửi lại";
+                guests: document
+                    .getElementById(
+                        "rsvp-guests"
+                    )
+                    .value,
 
-            alert(
-                "Có lỗi xảy ra 😭"
+                message: document
+                    .getElementById(
+                        "rsvp-message"
+                    )
+                    .value
+            };
+
+            console.log(
+                "Saving RSVP Payload to database:",
+                data
             );
+
+            try {
+
+                const response =
+                    await fetch(
+                        "https://script.google.com/macros/s/AKfycbyD3LDKqiioMkNle_OYzVOBuUyaz_UOj_OffXYGm6zHg4rvcB2xu_qcYeIrbH3r9OMu/exec",
+                        {
+
+                            method: "POST",
+
+                            mode: "cors",
+
+                            headers: {
+                                "Content-Type":
+                                "application/json"
+                            },
+
+                            body: JSON.stringify(
+                                data
+                            )
+                        }
+                    );
+
+                const result =
+                    await response.text();
+
+                console.log(result);
+
+                formWrapper.classList.add(
+                    "hidden"
+                );
+
+                successBox.classList.remove(
+                    "hidden"
+                );
+
+                form.reset();
+
+            } catch (error) {
+
+                console.error(error);
+
+                submitBtn.disabled = false;
+
+                submitBtn.innerText =
+                    "GỬI PHẢN HỒI";
+
+                alert(
+                    "Không thể gửi phản hồi 😭"
+                );
+            }
         }
+    );
+}
 
-    });
+/* RESET RSVP */
 
+function resetRSVPForm() {
+
+    const successBox =
+        document.getElementById("rsvp-success");
+
+    const formWrapper =
+        document.getElementById("rsvp-form-wrapper");
+
+    successBox.classList.add(
+        "hidden"
+    );
+
+    formWrapper.classList.remove(
+        "hidden"
+    );
 }
