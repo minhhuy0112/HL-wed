@@ -297,7 +297,56 @@ function initRSVPForm() {
             "rsvp-form-wrapper"
         );
 
+    const guestSelect =
+        document.getElementById(
+            "rsvp-guests"
+        );
+
+    const attendingInputs =
+        document.querySelectorAll(
+            'input[name="attending"]'
+        );
+
     if (!form) return;
+
+    /* RSVP STATUS CHANGE */
+
+    attendingInputs.forEach(input => {
+
+        input.addEventListener(
+            "change",
+            () => {
+
+                const selected =
+                    document.querySelector(
+                        'input[name="attending"]:checked'
+                    ).value;
+
+                if (selected === "no") {
+
+                    guestSelect.disabled = true;
+
+                    guestSelect.style.opacity = ".5";
+
+                } else {
+
+                    guestSelect.disabled = false;
+
+                    guestSelect.style.opacity = "1";
+
+                    if (
+                        !guestSelect.value ||
+                        guestSelect.value === "0"
+                    ) {
+
+                        guestSelect.value = "1";
+                    }
+                }
+            }
+        );
+    });
+
+    /* SUBMIT */
 
     form.addEventListener(
         "submit",
@@ -315,6 +364,11 @@ function initRSVPForm() {
             submitBtn.innerText =
                 "ĐANG GỬI...";
 
+            const attendingValue =
+                document.querySelector(
+                    'input[name="attending"]:checked'
+                ).value;
+
             const data = {
 
                 name: document
@@ -323,17 +377,15 @@ function initRSVPForm() {
                     )
                     .value,
 
-                attending: document
-                    .querySelector(
-                        'input[name="attending"]:checked'
-                    )
-                    .value,
+                attending:
+                    attendingValue === "yes"
+                    ? "Có"
+                    : "Không",
 
-                guests: document
-                    .getElementById(
-                        "rsvp-guests"
-                    )
-                    .value,
+                guests:
+                    attendingValue === "yes"
+                    ? guestSelect.value
+                    : "0",
 
                 message: document
                     .getElementById(
@@ -343,7 +395,7 @@ function initRSVPForm() {
             };
 
             console.log(
-                "Saving RSVP Payload to database:",
+                "Saving RSVP Payload:",
                 data
             );
 
@@ -371,6 +423,12 @@ function initRSVPForm() {
                 );
 
                 form.reset();
+
+                guestSelect.disabled = false;
+
+                guestSelect.style.opacity = "1";
+
+                guestSelect.value = "1";
 
             } catch (error) {
 
