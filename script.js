@@ -282,13 +282,20 @@ function initGiftToggle() {
 
 function initRSVPForm() {
 
-    const form = document.getElementById("rsvp-form");
+    const form =
+        document.getElementById(
+            "rsvp-form"
+        );
 
     const successBox =
-        document.getElementById("rsvp-success");
+        document.getElementById(
+            "rsvp-success"
+        );
 
     const formWrapper =
-        document.getElementById("rsvp-form-wrapper");
+        document.getElementById(
+            "rsvp-form-wrapper"
+        );
 
     if (!form) return;
 
@@ -342,30 +349,18 @@ function initRSVPForm() {
 
             try {
 
-                const response =
-                    await fetch(
-                        "https://script.google.com/macros/s/AKfycbyD3LDKqiioMkNle_OYzVOBuUyaz_UOj_OffXYGm6zHg4rvcB2xu_qcYeIrbH3r9OMu/exec",
-                        {
+                await fetch(
+                    "https://script.google.com/macros/s/AKfycbxPyMBA9WMYTWMkRKzRUhGPVAJ2g8Wb2hmrataaLzW-pB7DABP9SlkNkVmYyJszcs_S/exec",
+                    {
 
-                            method: "POST",
+                        method: "POST",
 
-                            mode: "cors",
+                        body: JSON.stringify(
+                            data
+                        )
 
-                            headers: {
-                                "Content-Type":
-                                "application/json"
-                            },
-
-                            body: JSON.stringify(
-                                data
-                            )
-                        }
-                    );
-
-                const result =
-                    await response.text();
-
-                console.log(result);
+                    }
+                );
 
                 formWrapper.classList.add(
                     "hidden"
@@ -394,15 +389,19 @@ function initRSVPForm() {
     );
 }
 
-/* RESET RSVP */
+/* RESET FORM */
 
 function resetRSVPForm() {
 
     const successBox =
-        document.getElementById("rsvp-success");
+        document.getElementById(
+            "rsvp-success"
+        );
 
     const formWrapper =
-        document.getElementById("rsvp-form-wrapper");
+        document.getElementById(
+            "rsvp-form-wrapper"
+        );
 
     successBox.classList.add(
         "hidden"
