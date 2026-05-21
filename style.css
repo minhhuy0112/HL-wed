@@ -1175,37 +1175,41 @@ text-align: center;
     font-weight: 400;
 }
 
-
+.heart-day {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .heart-outline {
     position: absolute;
     width: 62px;
     height: 62px;
 
-    stroke: #8b0000;
-    stroke-width: 3;
-
-    fill: #b3001b; /* ruby red */
-
-    animation: heartbeat 1.2s infinite ease-in-out;
-    transform-origin: center;
-
-    filter:
-        drop-shadow(0 0 6px rgba(179,0,27,0.35));
+    stroke: #b10000;
+    stroke-width: 4;
+    fill: transparent;
 }
+
 .heart-day {
     position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-
-    color: white;
-    font-weight: 600;
-    z-index: 2;
 }
 
-.heart-day svg {
-    z-index: -1;
+.heart-outline {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+
+    stroke: #b10000;
+    stroke-width: 4;
+    fill: transparent;
+
+    animation: heartbeat 1.2s infinite ease-in-out;
+    transform-origin: center;
 }
 
 @keyframes heartbeat {
