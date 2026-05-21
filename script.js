@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initGalleryReveal();
     initMapPopup();
     initGiftToggle();
+	initRSVPForm();
 });
 
 // 1. Envelope Opening Controller (Mở Thiệp)
@@ -303,6 +304,78 @@ function initGiftToggle() {
 
             btn.innerText = "Gửi mừng cưới";
 
+        }
+
+    });
+
+}
+
+function initRSVPForm() {
+
+    const form = document.getElementById("rsvp-form");
+
+    form.addEventListener("submit", async (e) => {
+
+        e.preventDefault();
+
+        const submitBtn = form.querySelector("button");
+
+        submitBtn.disabled = true;
+
+        submitBtn.innerText = "Đang gửi...";
+
+        const data = {
+
+            name: document
+                .getElementById("guest-name")
+                .value,
+
+            phone: document
+                .getElementById("guest-phone")
+                .value,
+
+            guests: document
+                .getElementById("guest-count")
+                .value,
+
+            message: document
+                .getElementById("guest-message")
+                .value
+        };
+
+        try {
+
+            await fetch(
+                "https://script.google.com/macros/s/AKfycbzqxRpxmtZ8Zf0DiK_Zq4aWPkLTv4DUJGwLHI5AJ3YCyJp6ajUP4agAViPEwWWDugjR/exec",
+                {
+
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                        "application/json"
+                    },
+
+                    body: JSON.stringify(data)
+
+                }
+            );
+
+            submitBtn.innerText =
+                "Đã xác nhận ✓";
+
+            form.reset();
+
+        } catch (error) {
+
+            submitBtn.disabled = false;
+
+            submitBtn.innerText =
+                "Gửi lại";
+
+            alert(
+                "Có lỗi xảy ra 😭"
+            );
         }
 
     });
