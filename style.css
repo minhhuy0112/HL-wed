@@ -1175,29 +1175,7 @@ text-align: center;
     font-weight: 400;
 }
 
-.heart-day {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.heart-outline {
-    position: absolute;
-    width: 62px;
-    height: 62px;
-
-    stroke: #b10000;
-    stroke-width: 4;
-    fill: transparent;
-}
-
-.heart-day {
-    position: relative;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .heart-outline {
     position: absolute;
