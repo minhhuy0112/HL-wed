@@ -350,7 +350,7 @@ function initRSVPForm() {
             try {
 
                 await fetch(
-                    "https://script.google.com/macros/s/AKfycbxPyMBA9WMYTWMkRKzRUhGPVAJ2g8Wb2hmrataaLzW-pB7DABP9SlkNkVmYyJszcs_S/exec",
+                    "https://script.google.com/macros/s/AKfycbwcfA7lFgo4EF4YDyZY5HvT-PW35lXudpfO5gVM6OtvRDVkOao0u_3VB71R_YWW8Rkf/exec",
                     {
 
                         method: "POST",
