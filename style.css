@@ -1682,7 +1682,7 @@ backdrop-filter: blur(2px);
     touch-action: manipulation;
     border-radius: 999px;
 
-    background: #b08b57;
+    background: var(--gold);
 
     color: white;
 
