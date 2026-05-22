@@ -107,46 +107,88 @@ body {
 
 /* Shared Gold text & button styling */
 .btn-primary {
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
     padding: 1rem 3rem;
-    background-color: var(--gold);
+
+    background: linear-gradient(
+        180deg,
+        #f8e7b0 0%,
+        #d8b56b 42%,
+        #b8862b 100%
+    );
+
     color: var(--white);
+
     border: none;
     border-radius: 9999px;
+
     font-family: 'Playfair Display', serif;
     font-size: 1.125rem;
     letter-spacing: 0.25em;
+
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(197, 160, 89, 0.3);
+
+    box-shadow:
+        0 10px 30px rgba(197, 160, 89, 0.3),
+        inset 0 1px 1px rgba(255,255,255,.4);
+
     transition: all 0.3s ease;
+}
+
+/* ánh sáng chạy */
+
+.btn-primary::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: -50%;
+    left: -120%;
+
+    width: 35%;
+    height: 220%;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.15),
+        rgba(255,255,255,.85),
+        rgba(255,255,255,.15),
+        transparent
+    );
+
+    transform: rotate(25deg);
+
+    animation: luxuryShine 3s linear infinite;
 }
 
 .btn-primary:hover {
-    background-color: var(--gold-dark);
+
     transform: translateY(-2px);
-    box-shadow: 0 15px 40px rgba(197, 160, 89, 0.5);
+
+    box-shadow:
+        0 15px 40px rgba(197, 160, 89, 0.45),
+        inset 0 1px 1px rgba(255,255,255,.45);
 }
 
-.btn-outline {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    border: 1px solid var(--gold);
-    color: var(--gold);
-    border-radius: 9999px;
-    text-decoration: none;
-    font-family: 'Playfair Display', serif;
-    font-size: 0.875rem;
-    letter-spacing: 0.15em;
-    transition: all 0.3s ease;
-}
+@keyframes luxuryShine {
 
-.btn-outline:hover {
-    background-color: var(--gold);
-    color: var(--white);
-}
+    0%{
+        left: -120%;
+    }
 
+    100%{
+        left: 160%;
+    }
+}
 /* 1. Envelope Gate Layer (Mở Thiệp) */
 .envelope-gate {
     position: fixed;
