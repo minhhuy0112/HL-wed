@@ -2189,15 +2189,14 @@ backdrop-filter: blur(2px);
 
 .premium-heart{
 
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 
-    fill: #d4af37;
-
-    filter:
-        drop-shadow(0 2px 6px rgba(212,175,55,.25));
+    fill: #d4b06a;
 
     flex-shrink: 0;
+
+    display: block;
 }
 
 .premium-heart.small{
