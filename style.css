@@ -991,8 +991,7 @@ text-align: center;
 
 .bank-valueHighlight {
     font-size: 1.25rem;
-    font-family: 'Playfair Display', serif;
-    color: var(--stone);
+    font-family: 'Montserrat', serif;
     font-weight: 700;
     margin-bottom: 0.75rem;
 }
@@ -2008,7 +2007,7 @@ backdrop-filter: blur(2px);
 
     letter-spacing: .08em;
 
-    color: #111;
+
 }
 /* ===== PREMIUM WEDDING GIFT CARD ===== */
 
@@ -2144,7 +2143,6 @@ backdrop-filter: blur(2px);
 
     letter-spacing: .08em;
 
-    color: #111;
 }
 
 .owner-name{
@@ -2211,11 +2209,8 @@ backdrop-filter: blur(2px);
 
 .bank-valueHighlight{
 
-    color: var(--gold) !important;
-
     text-decoration: none !important;
 
-    -webkit-text-fill-color: var(--gold) !important;
 }
 .gift-card .bank-value,
 .gift-card .bank-valueHighlight,
