@@ -2208,3 +2208,28 @@ backdrop-filter: blur(2px);
     width: 20px;
     height: 20px;
 }
+
+.bank-valueHighlight,
+.bank-valueHighlight a {
+
+    color: var(--gold) !important;
+
+    text-decoration: none !important;
+
+    -webkit-text-fill-color: var(--gold) !important;
+}
+.gift-card .bank-value,
+.gift-card .bank-valueHighlight,
+.gift-card .owner-name,
+.gift-card .gift-role{
+
+    background: linear-gradient(
+        180deg,
+        #f7e7b5 0%,
+        #d4b06a 45%,
+        #b98b3c 100%
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
