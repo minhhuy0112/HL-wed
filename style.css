@@ -2185,3 +2185,90 @@ backdrop-filter: blur(2px);
         width: 80px;
     }
 }
+/* ===== PREMIUM HEART ===== */
+
+.premium-heart{
+
+    width: 14px;
+    height: 14px;
+
+    background: #d4af37;
+
+    position: relative;
+
+    transform: rotate(45deg);
+
+    box-shadow:
+        0 2px 8px rgba(212,175,55,.25);
+}
+
+.premium-heart::before,
+.premium-heart::after{
+
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+    height: 14px;
+
+    background: #d4af37;
+
+    border-radius: 50%;
+}
+
+.premium-heart::before{
+    top: -7px;
+    left: 0;
+}
+
+.premium-heart::after{
+    left: -7px;
+    top: 0;
+}
+
+/* SMALL */
+
+.premium-heart.small{
+
+    width: 10px;
+    height: 10px;
+}
+
+.premium-heart.small::before,
+.premium-heart.small::after{
+
+    width: 10px;
+    height: 10px;
+}
+
+.premium-heart.small::before{
+    top: -5px;
+}
+
+.premium-heart.small::after{
+    left: -5px;
+}
+
+/* TINY */
+
+.premium-heart.tiny{
+
+    width: 8px;
+    height: 8px;
+}
+
+.premium-heart.tiny::before,
+.premium-heart.tiny::after{
+
+    width: 8px;
+    height: 8px;
+}
+
+.premium-heart.tiny::before{
+    top: -4px;
+}
+
+.premium-heart.tiny::after{
+    left: -4px;
+}
