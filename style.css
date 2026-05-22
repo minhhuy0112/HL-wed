@@ -107,27 +107,19 @@ body {
 
 /* Shared Gold text & button styling */
 .btn-primary {
+    position: relative;
+    overflow: hidden;
 
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    position: relative;
-    overflow: hidden;
-
     padding: 1rem 3rem;
-
-    background: linear-gradient(
-        180deg,
-        #f8e7b0 0%,
-        #d8b56b 42%,
-        #b8862b 100%
-    );
-
-    color: var(--white);
 
     border: none;
     border-radius: 9999px;
+
+    color: var(--white);
 
     font-family: 'Playfair Display', serif;
     font-size: 1.125rem;
@@ -135,14 +127,26 @@ body {
 
     cursor: pointer;
 
-    box-shadow:
-        0 10px 30px rgba(197, 160, 89, 0.3),
-        inset 0 1px 1px rgba(255,255,255,.4);
+    background: linear-gradient(
+        180deg,
+        #f7df9a 0%,
+        #d4af37 30%,
+        #b8891f 55%,
+        #f3d57a 78%,
+        #fff1b8 100%
+    );
 
-    transition: all 0.3s ease;
+    box-shadow:
+        0 10px 30px rgba(197, 160, 89, 0.35),
+        inset 0 2px 6px rgba(255,255,255,.35),
+        inset 0 -2px 6px rgba(0,0,0,.08);
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
 }
 
-/* ánh sáng chạy */
+/* ÁNH SÁNG KIM LOẠI */
 
 .btn-primary::before {
 
@@ -150,27 +154,31 @@ body {
 
     position: absolute;
 
-    top: -50%;
-    left: -120%;
+    top: -120%;
+    left: -60%;
 
-    width: 70%;
-    height: 220%;
+    width: 55%;
+    height: 320%;
 
     background: linear-gradient(
         90deg,
         transparent,
-        rgba(255,255,255,.15),
-        rgba(255,255,255,.85),
-        rgba(255,255,255,.15),
+        rgba(255,230,170,.15),
+        rgba(255,245,210,.95),
+        rgba(255,230,170,.15),
         transparent
     );
 
     transform: rotate(20deg);
 
-    animation: luxuryShine 7s linear infinite;
-	opacity: .9;
-	filter: blur(2px);
+    animation: luxuryShine 5.5s linear infinite;
+
+    filter: blur(2px);
+
+    opacity: .95;
 }
+
+/* HOVER */
 
 .btn-primary:hover {
 
@@ -178,16 +186,19 @@ body {
 
     box-shadow:
         0 15px 40px rgba(197, 160, 89, 0.45),
-        inset 0 1px 1px rgba(255,255,255,.45);
+        inset 0 2px 6px rgba(255,255,255,.4),
+        inset 0 -2px 6px rgba(0,0,0,.08);
 }
+
+/* ANIMATION */
 
 @keyframes luxuryShine {
 
-    0%{
-        left: -120%;
+    0% {
+        left: -80%;
     }
 
-    100%{
+    100% {
         left: 160%;
     }
 }
