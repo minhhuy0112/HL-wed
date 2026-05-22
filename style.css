@@ -2209,8 +2209,7 @@ backdrop-filter: blur(2px);
     height: 20px;
 }
 
-.bank-valueHighlight,
-.bank-valueHighlight a {
+.bank-valueHighlight{
 
     color: var(--gold) !important;
 
