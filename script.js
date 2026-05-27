@@ -482,3 +482,32 @@ function resetRSVPForm() {
         "hidden"
     );
 }
+
+/* =========================
+   COUPLE PROFILE SCROLL
+========================= */
+
+const profileCards = document.querySelectorAll(
+    '.groom-side, .bride-side'
+);
+
+const profileObserver = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add('show');
+        }
+
+    });
+
+},{
+    threshold: 0.25
+});
+
+profileCards.forEach(card=>{
+
+    profileObserver.observe(card);
+
+});
