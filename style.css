@@ -566,8 +566,8 @@ overflow: hidden;
 .couple-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-    margin-top: 4rem;
+    gap: 0rem;
+    margin-top: 2rem;
 }
 
 .couple-card {
@@ -2283,3 +2283,212 @@ backdrop-filter: blur(2px);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+/* =========================
+   COUPLE SECTION PREMIUM
+========================= */
+
+.couple-section{
+    padding: 4rem 0;
+}
+
+.couple-grid{
+    display: flex;
+    flex-direction: column;
+    gap: 0rem;
+
+    overflow: hidden;
+}
+
+/* ITEM */
+
+.couple-item{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+/* IMAGE */
+
+.profile-photo{
+    overflow: hidden;
+}
+
+.profile-photo img{
+    width: 100%;
+    display: block;
+
+    border: 6px solid var(--gold-light);
+
+    transition:
+        transform .8s ease,
+        box-shadow .8s ease;
+}
+
+.profile-photo img:hover{
+    transform: scale(1.03);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.15);
+}
+
+/* TEXT */
+
+.family-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 2rem;
+}
+.family-text{
+    font-family: 'Playfair Display', serif;
+}
+
+.family-text h3{
+    font-size: 2rem;
+    font-weight: 900;
+
+    margin-bottom: 1rem;
+}
+
+.family-text p{
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    line-height: 2;
+}
+
+/* CHIBI */
+
+.chibi-wrap{
+    margin: 2rem 0 1rem;
+}
+
+.chibi-wrap img{
+    width: 120px;
+}
+
+/* NAME */
+
+.profile-name-script{
+    font-family: 'MyWeddingFont', cursive;
+    font-size: 5rem;
+    font-weight: 500;
+
+    color: var(--gold);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+.groom-side,
+.bride-side{
+    opacity: 0;
+    transform: translateY(80px);
+
+    transition:
+        opacity 1.2s ease,
+        transform 1.2s ease;
+}
+
+/* GROOM */
+
+.groom-side .profile-photo{
+    transform: translateX(-120px);
+    opacity: 0;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1.5s ease;
+}
+
+.groom-side .family-info{
+    transform: translateX(120px);
+    opacity: 0;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1.5s ease;
+}
+
+/* BRIDE */
+
+.bride-side .profile-photo{
+    transform: translateX(120px);
+    opacity: 0;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1.5s ease;
+}
+
+.bride-side .family-info{
+    transform: translateX(-120px);
+    opacity: 0;
+
+    transition:
+        transform 1.5s ease,
+        opacity 1.5s ease;
+}
+
+/* SHOW */
+
+.groom-side.show,
+.bride-side.show{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.groom-side.show .profile-photo,
+.groom-side.show .family-info,
+.bride-side.show .profile-photo,
+.bride-side.show .family-info{
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .couple-item{
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    .family-info{
+        padding: 0.5rem;
+	line-height: 1.2;
+    }
+
+    .profile-photo{
+        height: 100%;
+    }
+
+    .profile-photo img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .family-text h3{
+        font-size: 1.1rem;
+    }
+
+    .family-text p{
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .profile-name-script{
+        font-size: 2.6rem;
+    }
+
+    .chibi-wrap img{
+        width: 100px;
+    }
