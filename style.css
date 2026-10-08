@@ -285,6 +285,7 @@ overflow: hidden;
     font-family: 'Dancing Script', cursive;
     display: block;
     margin: 0.5rem 0;
+	transform: rotate(35deg);
     color: var(--gold-light);
 }
 
