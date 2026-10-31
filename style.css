@@ -1586,7 +1586,9 @@ text-align: center;
     grid-column: span 6;
     height: 420px;
 }
-
+#only-fone{
+	display:none;
+}
 /* ===== REVEAL ===== */
 
 .reveal-left {
@@ -1626,6 +1628,9 @@ text-align: center;
         grid-column: span 1;
         height: 180px;
     }
+	#only-fone{
+		display:block;
+	}
 
     .gallery-item-premium {
         border-radius: 18px;
