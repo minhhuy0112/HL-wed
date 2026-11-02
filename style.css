@@ -12,7 +12,9 @@
 
 /* --- CSS Reset and Base styling --- */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -89,7 +91,8 @@ body {
     margin: 1.5rem auto 3rem auto;
 }
 
-.title-divider::before, .title-divider::after {
+.title-divider::before,
+.title-divider::after {
     content: "";
     height: 1px;
     width: 60px;
@@ -101,9 +104,6 @@ body {
 }
 
 /* Floral motif backgrounds */
-.floral-pattern {
-    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
-}
 
 /* Shared Gold text & button styling */
 .btn-primary {
@@ -207,20 +207,14 @@ body {
 .envelope-gate {
     position: fixed;
     inset: 0;
-    z-index: 1000;
-overflow: hidden;
+    z-index: 9999;
+    overflow: hidden;
     background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 1.5rem;
     transition: opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1), transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
-}
-
-.envelope-gate.fade-out {
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(1.08);
 }
 
 .envelope-card {
@@ -443,13 +437,6 @@ overflow: hidden;
     font-weight: 400;
 }
 
-.main-names .lowercase-and {
-    font-family: 'MyWeddingFont', cursive;
-    text-transform: lowercase;
-    font-size: 3.25rem;
-    color: var(--gold-light);
-}
-
 .date-container {
     display: flex;
     align-items: center;
@@ -470,43 +457,6 @@ overflow: hidden;
 }
 
 /* Mouse Wheel icon */
-.btn-scroll-down {
-    position: absolute;
-    bottom: 2.5rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-    color: rgba(255, 255, 255, 0.6);
-    font-size: 0.625rem;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-}
-
-.mouse-scroll {
-    width: 24px;
-    height: 40px;
-    border: 2px solid rgba(255, 255, 255, 0.4);
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    padding-top: 8px;
-}
-
-.mouse-scroll .wheel {
-    width: 4px;
-    height: 8px;
-    border-radius: 2px;
-    background-color: var(--gold);
-    animation: scroll-wheel 1.5s infinite;
-}
-
-@keyframes scroll-wheel {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(12px); opacity: 0; }
-}
 
 /* 3. Countdown Section */
 .section-countdown {
@@ -553,102 +503,6 @@ overflow: hidden;
 }
 
 /* 4. Couple Section & Cards */
-.section-couple {
-    padding: 8rem 0;
-    background-color: var(--cream);
-}
-
-.title-heart-icon {
-    color: var(--gold);
-    fill: rgba(197, 160, 89, 0.15);
-    margin-bottom: 1.5rem;
-}
-
-.couple-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0rem;
-    margin-top: 2rem;
-}
-
-.couple-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.avatar-wrapper {
-    position: relative;
-    width: 20rem;
-    height: 20rem;
-    margin-bottom: 3rem;
-}
-
-.avatar-ring {
-    position: absolute;
-    inset: -0.75rem;
-    border: 2px solid rgba(197, 160, 89, 0.25);
-    border-radius: 50%;
-}
-
-.avatar-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 8px solid var(--white);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
-}
-
-.name-display {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    color: var(--stone);
-    margin-bottom: 0.5rem;
-}
-
-.role-desc {
-    font-size: 1.5rem;
-    color: var(--gold);
-    margin-bottom: 2rem;
-}
-
-.parent-info-card {
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid rgba(197, 160, 89, 0.1);
-    padding: 1.5rem 2.5rem;
-    border-radius: 1.5rem;
-    margin-bottom: 2rem;
-    width: 100%;
-    max-width: 320px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.02);
-}
-
-.family-title {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: #ababab;
-    margin-bottom: 0.75rem;
-    font-weight: 600;
-}
-
-.parent-name {
-    color: var(--stone);
-    font-weight: 500;
-    margin: 0.25rem 0;
-}
-
-.personal-quote {
-    font-style: italic;
-    color: #666;
-    line-height: 1.8;
-    max-width: 400px;
-    padding: 0 1rem;
-    border-top: 1px solid rgba(197, 160, 89, 0.2);
-    padding-top: 1.5rem;
-}
 
 /* 5. Timeline Layout Section */
 .section-events {
@@ -763,43 +617,6 @@ overflow: hidden;
 }
 
 /* 6. Photo Gallery Grid */
-.section-gallery {
-    padding: 8rem 0;
-    background-color: var(--cream);
-}
-
-.gallery-grid {
-    column-count: 3;
-    column-gap: 1.5rem;
-    margin-top: 4rem;
-}
-
-.gallery-item {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    border-radius: 1.25rem;
-    overflow: hidden;
-    border: 6px solid var(--white);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-    transition: transform 0.5s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    display: block;
-    transition: transform var(--transition-speed);
-}
-
-.gallery-item:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-item:hover img {
-    transform: scale(1.05);
-}
-
 /* 7. RSVP Wedding card */
 .section-rsvp {
     padding: 8rem 0;
@@ -845,7 +662,9 @@ overflow: hidden;
     margin-bottom: 0.75rem;
 }
 
-.form-input, .form-select, .form-textarea {
+.form-input,
+.form-select,
+.form-textarea {
     width: 100%;
     padding: 1rem 1.75rem;
     border-radius: 9999px;
@@ -863,7 +682,9 @@ overflow: hidden;
     resize: none;
 }
 
-.form-input:focus, .form-select:focus, .form-textarea:focus {
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
     border-color: var(--gold);
 }
 
@@ -1085,7 +906,7 @@ text-align: center;
 .heart-container {
     position: fixed;
     inset: 0;
-    z-index: 9999;
+    z-index: 50;
     pointer-events: none;
     overflow: hidden;
 }
@@ -1150,9 +971,7 @@ text-align: center;
         flex-direction: row;
     }
     
-    .gallery-grid {
-        column-count: 2;
-    }
+    
     
     .gift-grid {
         grid-template-columns: 1fr;
@@ -1234,11 +1053,6 @@ text-align: center;
 
     font-size: 2rem;
     font-weight: 400;
-}
-
-.calendar-weekdays span:nth-child(6),
-.calendar-weekdays span:nth-child(7) {
-
 }
 
 .heart-day {
@@ -1352,19 +1166,14 @@ text-align: center;
         font-size: 1.5rem;
     }
     
-    .avatar-wrapper {
-        width: 16rem;
-        height: 16rem;
-    }
+    
     
     .main-names {
         font-size: 3.8rem;
         line-height: 1.5;
     }
     
-    .gallery-grid {
-        column-count: 1;
-    }
+    
     
     .rsvp-choices {
         flex-direction: column;
@@ -1389,7 +1198,6 @@ text-align: center;
     transform: translateY(0) !important;
 }
 
-
 /* ===== Premium Gallery ===== */
 
 .section-gallery {
@@ -1397,121 +1205,7 @@ text-align: center;
     background: #fdfaf5;
 }
 
-.gallery-masonry {
-    display: flex;
-    gap: 24px;
-    margin-top: 70px;
-}
-
-.gallery-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-}
-
-.gallery-card {
-    position: relative;
-    overflow: hidden;
-    border-radius: 28px;
-
-    background: #fff;
-
-    box-shadow:
-        0 10px 30px rgba(0,0,0,0.06);
-
-    cursor: pointer;
-
-    transition:
-        transform .5s ease,
-        box-shadow .5s ease;
-}
-
-.gallery-card.large {
-    height: 520px;
-}
-
-.gallery-card.tall {
-    height: 680px;
-}
-
-.gallery-card:not(.large):not(.tall) {
-    height: 320px;
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    transition:
-        transform 1s ease,
-        filter .6s ease;
-}
-
-.gallery-card::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        linear-gradient(
-            to top,
-            rgba(0,0,0,0.18),
-            transparent 45%
-        );
-
-    opacity: 0;
-
-    transition: opacity .5s ease;
-}
-
-.gallery-card:hover {
-    transform: translateY(-8px);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,0.12);
-}
-
-.gallery-card:hover img {
-    transform: scale(1.06);
-}
-
-.gallery-card:hover::after {
-    opacity: 1;
-}
-
 /* Mobile */
-
-@media(max-width:900px){
-
-    .gallery-masonry {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .gallery-column {
-        gap: 14px;
-    }
-
-    .gallery-card.large,
-    .gallery-card.tall,
-    .gallery-card {
-        height: auto;
-        border-radius: 18px;
-    }
-
-    .gallery-card img {
-        width: 100%;
-        aspect-ratio: 4/5;
-        object-fit: cover;
-        display: block;
-    }
-
-}
 
 /* ===== PREMIUM MASONRY GALLERY ===== */
 
@@ -1586,7 +1280,7 @@ text-align: center;
     grid-column: span 6;
     height: 420px;
 }
-#only-fone{
+#only-fone {
 	display:none;
 }
 /* ===== REVEAL ===== */
@@ -1628,7 +1322,7 @@ text-align: center;
         grid-column: span 1;
         height: 180px;
     }
-	#only-fone{
+	#only-fone {
 		display:block;
 	}
 
@@ -1639,16 +1333,6 @@ text-align: center;
 }
 
 /* ===== CINEMATIC OPENING ===== */
-
-.envelope-gate {
-
-    position: fixed;
-    inset: 0;
-
-    overflow: hidden;
-
-    z-index: 9999;
-}
 
 /* DOORS */
 
@@ -1992,14 +1676,6 @@ backdrop-filter: blur(2px);
         translateY(0);
 }
 
-.custom-qr {
-
-    width: 220px;
-    height: 220px;
-
-    display: block;
-}
-
 .qr-wrapper {
 
     background: #fff;
@@ -2069,11 +1745,10 @@ backdrop-filter: blur(2px);
 
     letter-spacing: .08em;
 
-
 }
 /* ===== PREMIUM WEDDING GIFT CARD ===== */
 
-.wedding-gift-card{
+.wedding-gift-card {
 
     max-width: 520px;
 
@@ -2099,7 +1774,7 @@ backdrop-filter: blur(2px);
 }
 
 .gift-top-decor,
-.gift-divider{
+.gift-divider {
 
     display: flex;
     align-items: center;
@@ -2109,20 +1784,20 @@ backdrop-filter: blur(2px);
     color: #d4a64f;
 }
 
-.gift-top-decor{
+.gift-top-decor {
     margin-bottom: 30px;
 }
 
-.gift-divider{
+.gift-divider {
     margin-bottom: 30px;
 }
 
-.gift-divider.small{
+.gift-divider.small {
     margin: 24px 0;
 }
 
 .gift-top-decor span,
-.gift-divider span{
+.gift-divider span {
 
     width: 140px;
     height: 1px;
@@ -2131,7 +1806,7 @@ backdrop-filter: blur(2px);
         rgba(212,166,79,.65);
 }
 
-.wedding-gift-card .gift-role{
+.wedding-gift-card .gift-role {
 
     font-size: 3.2rem;
 
@@ -2144,7 +1819,7 @@ backdrop-filter: blur(2px);
     text-align: center;
 }
 
-.wedding-gift-card .qr-wrapper{
+.wedding-gift-card .qr-wrapper {
 
     background: #fff;
 
@@ -2158,7 +1833,7 @@ backdrop-filter: blur(2px);
         0 10px 30px rgba(0,0,0,.05);
 }
 
-.wedding-gift-card .qr-img{
+.wedding-gift-card .qr-img {
 
     width: 100%;
     max-width: 320px;
@@ -2168,18 +1843,18 @@ backdrop-filter: blur(2px);
     margin: auto;
 }
 
-.wedding-gift-card .bank-details{
+.wedding-gift-card .bank-details {
 
     text-align: center;
 }
 
-.gift-info-block{
+.gift-info-block {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.wedding-gift-card .bank-label{
+.wedding-gift-card .bank-label {
 
     font-size: .9rem;
 
@@ -2188,7 +1863,7 @@ backdrop-filter: blur(2px);
     color: #999;
 }
 
-.wedding-gift-card .bank-value{
+.wedding-gift-card .bank-value {
 
     font-size: 2rem;
 
@@ -2197,7 +1872,7 @@ backdrop-filter: blur(2px);
     color: #111;
 }
 
-.wedding-gift-card .bank-valueHighlight{
+.wedding-gift-card .bank-valueHighlight {
 
     font-size: 2.2rem;
 
@@ -2207,47 +1882,47 @@ backdrop-filter: blur(2px);
 
 }
 
-.owner-name{
+.owner-name {
     font-size: 1.8rem !important;
 }
 
 @media(max-width:768px){
 
-    .wedding-gift-card{
+    .wedding-gift-card {
 
         padding: 40px 24px;
 
         border-radius: 32px;
     }
 
-    .wedding-gift-card .gift-role{
+    .wedding-gift-card .gift-role {
 
         font-size: 2.0rem;
     }
 
-    .wedding-gift-card .bank-value{
+    .wedding-gift-card .bank-value {
 
         font-size: 1.5rem;
     }
 
-    .wedding-gift-card .bank-valueHighlight{
+    .wedding-gift-card .bank-valueHighlight {
 
         font-size: 1.5rem;
     }
 
-    .owner-name{
+    .owner-name {
         font-size: 1.4rem !important;
     }
 
     .gift-top-decor span,
-    .gift-divider span{
+.gift-divider span {
 
         width: 80px;
     }
 }
 /* ===== PREMIUM HEART ===== */
 
-.premium-heart{
+.premium-heart {
 
     width: 18px;
     height: 18px;
@@ -2259,17 +1934,17 @@ backdrop-filter: blur(2px);
     display: block;
 }
 
-.premium-heart.small{
+.premium-heart.small {
     width: 12px;
     height: 12px;
 }
 
-.premium-heart.tiny{
+.premium-heart.tiny {
     width: 20px;
     height: 20px;
 }
 
-.bank-valueHighlight{
+.bank-valueHighlight {
 
     text-decoration: none !important;
 
@@ -2277,7 +1952,7 @@ backdrop-filter: blur(2px);
 .gift-card .bank-value,
 .gift-card .bank-valueHighlight,
 .gift-card .owner-name,
-.gift-card .gift-role{
+.gift-card .gift-role {
 
     background: linear-gradient(
         180deg,
@@ -2294,21 +1969,22 @@ backdrop-filter: blur(2px);
    COUPLE SECTION PREMIUM
 ========================= */
 
-.couple-section{
+.couple-section {
     padding: 4rem 0;
 }
 
-.couple-grid{
+.couple-grid {
     display: flex;
     flex-direction: column;
     gap: 0rem;
+    margin-top: 2rem;
 
     overflow: hidden;
 }
 
 /* ITEM */
 
-.couple-item{
+.couple-item {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -2316,11 +1992,11 @@ backdrop-filter: blur(2px);
 
 /* IMAGE */
 
-.profile-photo{
+.profile-photo {
     overflow: hidden;
 }
 
-.profile-photo img{
+.profile-photo img {
     width: 100%;
     display: block;
 
@@ -2331,7 +2007,7 @@ backdrop-filter: blur(2px);
         box-shadow .8s ease;
 }
 
-.profile-photo img:hover{
+.profile-photo img:hover {
     transform: scale(1.03);
 
     box-shadow:
@@ -2340,7 +2016,7 @@ backdrop-filter: blur(2px);
 
 /* TEXT */
 
-.family-info{
+.family-info {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2350,18 +2026,18 @@ backdrop-filter: blur(2px);
 
     padding: 2rem;
 }
-.family-text{
+.family-text {
     font-family: 'Playfair Display', serif;
 }
 
-.family-text h3{
+.family-text h3 {
     font-size: 2rem;
     font-weight: 900;
 
     margin-bottom: 1rem;
 }
 
-.family-text p{
+.family-text p {
     font-size: 1.5rem;
     font-weight: 700;
 
@@ -2370,17 +2046,17 @@ backdrop-filter: blur(2px);
 
 /* CHIBI */
 
-.chibi-wrap{
+.chibi-wrap {
     margin: 2rem 0 1rem;
 }
 
-.chibi-wrap img{
+.chibi-wrap img {
     width: 120px;
 }
 
 /* NAME */
 
-.profile-name-script{
+.profile-name-script {
     font-family: 'MyWeddingFont', cursive;
     font-size: 5rem;
     font-weight: 500;
@@ -2393,7 +2069,7 @@ backdrop-filter: blur(2px);
 ========================= */
 
 .groom-side,
-.bride-side{
+.bride-side {
     opacity: 0;
     transform: translateY(80px);
 
@@ -2404,7 +2080,7 @@ backdrop-filter: blur(2px);
 
 /* GROOM */
 
-.groom-side .profile-photo{
+.groom-side .profile-photo {
     transform: translateX(-120px);
     opacity: 0;
 
@@ -2413,7 +2089,7 @@ backdrop-filter: blur(2px);
         opacity 1.5s ease;
 }
 
-.groom-side .family-info{
+.groom-side .family-info {
     transform: translateX(120px);
     opacity: 0;
 
@@ -2424,7 +2100,7 @@ backdrop-filter: blur(2px);
 
 /* BRIDE */
 
-.bride-side .profile-photo{
+.bride-side .profile-photo {
     transform: translateX(120px);
     opacity: 0;
 
@@ -2433,7 +2109,7 @@ backdrop-filter: blur(2px);
         opacity 1.5s ease;
 }
 
-.bride-side .family-info{
+.bride-side .family-info {
     transform: translateX(-120px);
     opacity: 0;
 
@@ -2445,7 +2121,7 @@ backdrop-filter: blur(2px);
 /* SHOW */
 
 .groom-side.show,
-.bride-side.show{
+.bride-side.show {
     opacity: 1;
     transform: translateY(0);
 }
@@ -2453,7 +2129,7 @@ backdrop-filter: blur(2px);
 .groom-side.show .profile-photo,
 .groom-side.show .family-info,
 .bride-side.show .profile-photo,
-.bride-side.show .family-info{
+.bride-side.show .family-info {
     transform: translateX(0);
     opacity: 1;
 }
@@ -2462,39 +2138,328 @@ backdrop-filter: blur(2px);
 
 @media(max-width:768px){
 
-    .couple-item{
+    .couple-item {
         grid-template-columns: 1fr 1fr;
         align-items: stretch;
     }
 
-    .family-info{
+    .family-info {
         padding: 0.5rem;
 	line-height: 1.2;
     }
 
-    .profile-photo{
+    .profile-photo {
         height: 100%;
     }
 
-    .profile-photo img{
+    .profile-photo img {
         width: 100%;
         height: 100%;
         object-fit: cover;
     }
 
-    .family-text h3{
+    .family-text h3 {
         font-size: 1.1rem;
     }
 
-    .family-text p{
+    .family-text p {
         font-size: 0.95rem;
         line-height: 1.7;
     }
 
-    .profile-name-script{
+    .profile-name-script {
         font-size: 2.6rem;
     }
 
-    .chibi-wrap img{
+    .chibi-wrap img {
         width: 100px;
     }
+}
+
+/* =========================================================
+   ALBUM CƯỚI - SÁCH LẬT 3D
+========================================================= */
+
+.section-album {
+    padding: 100px 0 90px;
+    background:
+        radial-gradient(ellipse at 50% 55%, #f3e9d8 0%, var(--cream) 70%);
+    overflow-x: clip;
+}
+
+.album-head {
+    margin-bottom: 2rem;
+}
+
+.album-stage {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    outline: none;
+}
+
+.album-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    height: 480px; /* JS cập nhật theo tỉ lệ trang */
+    perspective: 4200px;
+    touch-action: pan-y;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    cursor: pointer;
+}
+
+.album-wrap.dragging {
+    cursor: grabbing;
+}
+
+.album-book {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Bóng đổ dưới sách */
+.ab-floor {
+    position: absolute;
+    bottom: -14px;
+    height: 34px;
+    background: radial-gradient(ellipse at 50% 40%, rgba(60, 40, 15, .38), rgba(60, 40, 15, 0) 70%);
+    filter: blur(5px);
+    pointer-events: none;
+}
+
+/* Cạnh xếp giấy hai bên */
+.ab-edge {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(to right, rgba(0, 0, 0, .09) 0 1px, rgba(255, 255, 255, 0) 1px 2px),
+        linear-gradient(to right, #efe6d4, #fff, #dccfb6);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+}
+
+.ab-edge-l { border-radius: 3px 0 0 3px; }
+.ab-edge-r { border-radius: 0 3px 3px 0; }
+
+/* Một tờ giấy (2 mặt) */
+.ab-leaf {
+    position: absolute;
+    top: 0;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.ab-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #f6efe2;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    will-change: transform;
+}
+
+.ab-back {
+    transform: rotateY(180deg);
+}
+
+.ab-front {
+    border-radius: 0 4px 4px 0;
+}
+
+.ab-back {
+    border-radius: 4px 0 0 4px;
+}
+
+.ab-face img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* Bóng gáy sách */
+.ab-face::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.ab-front::after {
+    background: linear-gradient(to right, rgba(0, 0, 0, .34) 0, rgba(0, 0, 0, .10) 3.5%, rgba(0, 0, 0, 0) 10%);
+}
+
+.ab-back::after {
+    background: linear-gradient(to left, rgba(0, 0, 0, .34) 0, rgba(0, 0, 0, .10) 3.5%, rgba(0, 0, 0, 0) 10%);
+}
+
+/* Bóng khi trang đang lật */
+.ab-shade {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: #1b1208;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Điều khiển */
+.album-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.4rem;
+}
+
+.album-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    background: transparent;
+    color: var(--gold-dark);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background var(--transition-speed), color var(--transition-speed), opacity var(--transition-speed);
+}
+
+.album-btn:hover:not(:disabled) {
+    background: var(--gold);
+    color: #fff;
+}
+
+.album-btn:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.album-btn:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.album-btn-expand {
+    margin-left: .6rem;
+}
+
+.album-counter {
+    min-width: 150px;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    letter-spacing: .12em;
+    color: var(--stone);
+}
+
+.album-close {
+    display: none;
+}
+
+/* Chế độ phóng to toàn màn hình */
+body.album-lock {
+    overflow: hidden;
+}
+
+.album-stage.is-expanded {
+    position: fixed;
+    inset: 0;
+    z-index: 99998;
+    max-width: none;
+    margin: 0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse at 50% 50%, #2b2219 0%, #120d08 85%);
+}
+
+.album-stage.is-expanded .album-wrap {
+    max-width: 1500px;
+}
+
+.album-stage.is-expanded .album-controls {
+    margin-top: 2rem;
+}
+
+.album-stage.is-expanded .album-btn {
+    color: var(--gold-light);
+    border-color: rgba(230, 210, 167, .6);
+}
+
+.album-stage.is-expanded .album-btn:hover:not(:disabled) {
+    background: var(--gold);
+    color: #fff;
+}
+
+.album-stage.is-expanded .album-counter {
+    color: var(--gold-light);
+}
+
+.album-stage.is-expanded .album-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 5;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(230, 210, 167, .6);
+    background: rgba(0, 0, 0, .35);
+    color: var(--gold-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.album-stage.is-expanded .album-btn-expand {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .section-album {
+        padding: 70px 0 60px;
+    }
+
+    .album-stage {
+        padding: 0 .5rem;
+    }
+
+    .album-controls {
+        gap: .6rem;
+        margin-top: 2rem;
+    }
+
+    .album-counter {
+        min-width: 110px;
+        font-size: .9rem;
+        letter-spacing: .06em;
+    }
+
+    /* Điện thoại: sách đã full chiều rộng, không cần nút phóng to (tránh đè nút nhạc) */
+    .album-btn-expand {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ab-shade { transition: none; }
+}
