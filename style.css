@@ -792,7 +792,8 @@ body {
 .section-gift {
     padding: 8rem 0;
     background-color: var(--cream);
-text-align: center;
+	text-align: center;
+	display:none;
 }
 
 .title-gift-icon {
