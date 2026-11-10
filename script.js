@@ -169,7 +169,7 @@ function initMusicController() {
 // 5. Scroll reveal cho các section
 function initScrollReveal() {
     const revealElements = document.querySelectorAll(
-        ".section-countdown, .calendar-section, .section-events, .section-rsvp, .section-gift, .main-footer"
+        ".section-countdown, .calendar-section, .family-section, .section-events, .section-rsvp, .section-gift, .main-footer"
     );
 
     const observer = new IntersectionObserver((entries) => {
